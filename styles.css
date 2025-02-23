@@ -1,0 +1,124 @@
+:root {
+    --bg-color-light: #f8f8f8;
+    --text-color-light: #333;
+    --border-color-light: #ddd;
+    --card-bg-light: rgba(255, 255, 255, 0.7);
+    --bg-color-dark: #121212;
+    --text-color-dark: #f0f0f0;
+    --border-color-dark: #444;
+    --card-bg-dark: rgba(63, 63, 63, 0.7);
+    --button-color: #007aff;
+    --button-hover-color: #005ecb;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* iOS-style container with a frosted glass effect */
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--card-bg-light);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Inputs and Buttons */
+select,
+button,
+input {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    background: #fff;
+    color: var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s, transform 0.1s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    width: calc(100% - 24px); /* Adjust width to fit within the container */
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: none; /* Ensure visibility in light mode */
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* iOS-style button */
+button {
+    background-color: var(--button-color);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+    transform: scale(1.05);
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+.dark-mode .container {
+    background: var(--card-bg-dark);
+    border-color: var(--border-color-dark);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode select,
+.dark-mode button,
+.dark-mode input {
+    background: var(--bg-color-dark);
+    color: var(--text-color-dark);
+    border-color: var(--border-color-dark);
+}
+
+.dark-mode input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Invert colors for better visibility in dark mode */
+}
+
+/* Birthday Message Styling */
+.birthday-message {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff3b30;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in animation for birthday message */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

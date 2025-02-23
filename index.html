@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Age Calculator</h2>
+      <button onclick="toggleDarkMode()">Toggle Light/Dark Mode</button>
+      <br /><br />
+      <label for="birthday">Enter your birthday:</label>
+      <input type="date" id="birthday" />
+      <br />
+      <label for="unit">Select unit:</label>
+      <select id="unit">
+        <option value="years">Years</option>
+        <option value="months">Months</option>
+        <option value="weeks">Weeks</option>
+        <option value="days">Days</option>
+        <option value="minutes">Minutes</option>
+        <option value="seconds">Seconds</option>
+      </select>
+      <br />
+      <button onclick="calculateAge()">Calculate</button>
+      <h3 id="result"></h3>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
